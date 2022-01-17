@@ -18,11 +18,12 @@ async def on_message(message):
 		return
 
 	channel = str(message.channel.name)
-	user_message = str(message.content)
+	user_message = str(message.content.lower())  # messaggio in lower case
+	msg = str(message.content)  # messaggio così com'è stato inviato
 	username = str(message.author).split("#")[0]
 	print(f"<{username}> {user_message} -> ({channel})")
 
-	if user_message.lower() == "!coinflip" or user_message.lower() == "!cf":
+	if user_message == "!coinflip" or user_message == "!cf":
 		risultato = random.randint(0, 1)
 		if risultato == 0:
 			testa_o_croce = "testa"
@@ -31,8 +32,8 @@ async def on_message(message):
 		await message.channel.send(f"È uscito {testa_o_croce}!")
 		return
 
-	if message.content == "Hi bot":
-		await message.channel.send("Hi human")
+	if user_message == "hi bot":
+		await message.channel.send("Hi human!")
 
 
 client.run(TOKEN)
