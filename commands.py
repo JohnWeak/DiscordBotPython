@@ -44,7 +44,7 @@ async def eight_ball(channel):
 		lines[i].replace("\n", "")
 		risposta = lines[i]
 
-	await channel.reply(f":8ball: dice... **{risposta}**", mention_author=True)
+	await channel.send(f":8ball: dice... **{risposta}**", mention_author=True)
 	return
 
 # fine eight_ball()
