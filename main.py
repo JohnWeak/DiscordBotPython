@@ -2,7 +2,7 @@
 import discord
 from commands import do_stuff
 
-TOKEN = "OTMwMTA3MzE0NjM0MTEzMDU1.YdxD8A.IXDdudKxLLex9MPKyvtK1MeaG6g"
+TOKEN = open("token.txt").readline()
 
 client = discord.Client()
 
