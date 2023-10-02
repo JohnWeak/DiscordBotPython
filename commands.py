@@ -11,7 +11,7 @@ async def do_stuff(message):
 	msg = str(message.content)  # messaggio così com'è stato inviato
 	username = str(message.author).split("#")[0]
 	client = discord.Client()
-	print(f"{username}: \"{user_message}\" in #{channel_name} ")
+	print(f"{username}: \"{msg}\" in #{channel_name} ")
 
 	if user_message == "!coinflip" or user_message == "!cf":
 		await coinflip(message)
